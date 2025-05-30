@@ -1,0 +1,12 @@
+<div class="register-section">
+    <h1>Register</h1>
+    <% if(error) { %>
+        <div class="error-message"><%= error %></div>
+    <% } %>
+    <form action="http://localhost:5000/auth/register" method="post" class="register-form">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit" class="submit-button"><i class="fa-solid fa-address-card" style="margin-right: 10px;"></i>Register</button>
+    </form>
+</div>

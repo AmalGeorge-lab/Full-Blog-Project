@@ -1,0 +1,14 @@
+<div class="profile-section">
+    <div class="image-section">
+        <% if(user?.profilePicture && user?.profilePicture.url){ %>
+            <img src="<%= user.profilePicture.url %>" alt="image">
+        <% } %>
+    </div>
+    <div class="details-section">
+        <h3>Name : <%= user.username %></h3>
+        <h3>Email : <%= user.email %></h3>
+        <h3>Data Joined : <%= user.createdAt.toDateString() %></h3>
+        <a href="/user/edit" style="background-color: red;">Edit</a>
+        <a href="/user/delete" style="background-color: rgb(58, 58, 58);">Delete</a>
+    </div>
+</div>

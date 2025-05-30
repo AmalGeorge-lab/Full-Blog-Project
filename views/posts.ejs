@@ -1,0 +1,25 @@
+<div class="post-section">
+    <h1>Posts ( <%= posts.length %> )</h1>
+    <% if(posts?.length > 0) { %>
+        <% posts.forEach((post)=>{ %>
+            <div class="post">
+                <h2 class="post-title"><%=post.title %></h2>
+                <div style="display: flex; column-gap: 20px;">
+                    <div class="post-content-section">
+                        <p><%= post.content %></p>
+                        <p><%= post.author.username %></p>
+                        <p><%= post.createdAt.toDateString() %></p>
+                        <a href="/posts/<%= post._id %>" class="read-more">Read More</a>
+                    </div>
+                    <div style="display: flex; justify-content: space-between;">
+                        <% if(post?.images?.length ) { %>
+                            <% post.images.forEach((image)=>{ %>
+                                <img src="<%= image.url %>" class="post-image">
+                            <% }) %>
+                        <% }%>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    <% } %>
+</div>

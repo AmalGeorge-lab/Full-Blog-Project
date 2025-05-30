@@ -1,0 +1,42 @@
+main .login-section{
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 20px;
+    height: 550px;
+}
+main .login-section h1{
+    background-color: rgb(163, 4, 62);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+main .login-section .error-message{
+    text-align: center;
+    color: red;
+    font-family: cursive;
+    font-size: 17px;
+    background-color: rgb(250, 177, 177);
+    padding: 6px 0;
+}
+main .login-section .login-form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+main .login-section .login-form input{
+    font-size: 15px;
+    padding: 5px;
+    outline: none;
+    border: 2px solid black;
+    font-family: cursive;
+}
+main .login-section .login-form .submit-button{
+    padding: 8px;
+    font-size: 20px;
+    color: white;
+    background-color:rgb(163, 4, 62) ;
+    border: none;
+    border-radius: 20px;
+}

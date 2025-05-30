@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/Styles/home.css">
+    <link rel="stylesheet" href="/Styles/login.css">
+    <link rel="stylesheet" href="/Styles/register.css">
+    <link rel="stylesheet" href="/Styles/post.css">
+    <link rel="stylesheet" href="/Styles/user.css">
+    <title><%= title %></title>
+</head>
+<body>
+
+    <header>
+        <div class="left-section">
+            <img src="/Images/logo.png" alt="Logo">
+            <h1>BLOG</h1>
+        </div>
+        <nav class="right-section">
+            <% if(user) { %>
+                <a href="http://localhost:5000/auth/dashboard"><i class="fa-solid fa-house"></i>Home</a>
+                <a href="http://localhost:5000/user/profile"><i class="fa-solid fa-user"></i>Profile</a>
+                <a href="http://localhost:5000/posts/add"><i class="fa-solid fa-circle-plus"></i>Add Post</a>
+                <a href="http://localhost:5000/posts"><i class="fa-solid fa-list-ul"></i>Posts</a>
+                <a href="http://localhost:5000/auth/logout" class="logout-button"><i class="fa-solid fa-right-from-bracket"></i>Log Out</a>
+            <% } else { %>
+                <a href="http://localhost:5000"><i class="fa-solid fa-house"></i>Home</a>
+                <a href="#"><i class="fa-solid fa-user-secret"></i>About Us</a>
+                <a href="http://localhost:5000/auth/login" class="login-button"><i class="fa-solid fa-right-to-bracket"></i>Login</a>
+                <a href="http://localhost:5000/auth/register" class="register-button"><i class="fa-solid fa-address-card"></i>Register</a>
+            <% } %>
+        </nav>
+    </header>
+
+    <main>
+        <%-body%>
+    </main>
+
+    <footer>
+        <p> &copy; 2025AGBlog . All rights reserved</p>
+    </footer>
+
+</body>
+</html>

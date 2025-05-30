@@ -1,0 +1,22 @@
+<form action="/user/profileUpdate" method="post" enctype="multipart/form-data" class="edit-profile">
+    <% if(message){ %>
+        <div><%= message %></div>
+    <% } %>
+    <div>
+        <label for="username">Username :</label>
+        <input type="text" name="username" id="username" value="<%= user.username %>" required>
+    </div>
+    <div>
+        <label for="email">Email :</label>
+        <input type="email" name="email" id="email" value="<%= user.email %>" required>
+    </div>
+    <div>
+        <label for="bio">Bio :</label>
+        <textarea name="bio" id="bio"><%= user?.bio %></textarea>
+    </div>
+    <div>
+        <label for="image">Image : </label>
+        <input type="file" name="image" id="image">
+    </div>
+    <button type="submit">Update Profile</button>
+</form>

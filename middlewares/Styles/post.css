@@ -1,0 +1,179 @@
+main .new-post-section{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 400px;
+    justify-content: center;
+    height: 550px;
+}
+main .new-post-section h1{
+    background-color: rgb(221, 105, 4);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+main .new-post-section .new-post-form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+main .new-post-section .new-post-form .message{
+    text-align: center;
+    font-family: cursive;
+    font-size: 18px;
+    padding: 6px 0;
+}
+main .new-post-section .new-post-form .error{
+    background-color: rgb(250, 177, 177);
+    color: red;
+}
+main .new-post-section .new-post-form .success{
+    color: rgb(2, 95, 2);
+    background-color: rgb(43, 240, 43);
+}
+main .new-post-section .new-post-form #image-preview{
+    display: flex;
+    column-gap: 10px;
+}
+main .new-post-section .new-post-form #image-preview .each-image{
+    padding: 5px;
+    border: 2px solid gray;
+    height: 80px;
+}
+main .new-post-section .new-post-form input{
+    font-size: 15px;
+    padding: 5px;
+    outline: none;
+    border: 2px solid black;
+    font-family: cursive;
+}
+main .new-post-section .new-post-form textarea{
+    resize: none;
+    height: 200px;
+    font-size: 15px;
+    padding: 5px;
+    border: 2px solid black;
+    font-family: cursive;
+}
+main .new-post-section .new-post-form .submit-button{
+    padding: 8px;
+    font-size: 20px;
+    color: white;
+    background-color:rgb(221, 105, 4);
+    border: none;
+    border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+main .post-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+main .post-section h1{
+    text-align: center;
+}
+main .post-section .post .post-title{
+    background-color: rgb(253, 176, 68);
+    padding: 10px 0px 10px 5px;
+}
+main .post-section .post{
+    border: 2px solid black;
+    display: flex;
+    margin: 20px 10px;
+    padding: 10px;
+    flex-direction: column;
+    row-gap: 20px;
+}
+main .post-section .post .post-content-section{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+main .post-section .post .post-content-section .read-more{
+    text-decoration: none;
+    background-color: rgb(38, 155, 245);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+main .post-section .post .post-content-section p{
+    font-family: cursive;
+    font-size: 15px;
+}
+main .post-section .post .post-image{
+    width: 200px;
+}
+
+
+main .each-post-section{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    margin: 10px;
+    width: 100%;
+    padding: 20px;
+    row-gap: 10px;
+}
+main .each-post-section .each-post-image{
+    height: 200px;
+    border: 1px solid gray;
+    padding: 8px;
+}
+
+
+main .each-post-section .post-delete , main .each-post-section .post-edit{
+    text-decoration: none;
+    font-size: 18px;
+    background-color: rgb(254, 6, 147);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+
+
+main .edit-post-section{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin: 40px;
+    padding: 20px;
+    border: 2px solid black;
+}
+main .edit-post-section input , main .edit-post-section textarea{
+    padding: 5px;
+    font-size: 15px;
+}
+
+main .edit-comment{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    row-gap: 20px;
+    height: 460px;
+}
+main .edit-comment textarea{
+    height: 200px;
+    font-size: 20px;
+    resize: none;
+    padding: 10px;
+}
+main .edit-comment button{
+    padding: 7px 0;
+    color: white;
+    background-color: rgb(4, 118, 162);
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+}

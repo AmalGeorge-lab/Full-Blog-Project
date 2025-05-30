@@ -1,0 +1,45 @@
+<div class="each-post-section">
+    <h1 style="background-color: orange; padding: 10px 0 10px 10px;"><%= post?.title %></h1>
+    <p style="font-size: 20px;"><%= post?.content %></p>
+    <div style="display: flex; column-gap: 20px;">
+        <% post?.images?.forEach((image)=>{ %>
+            <img src="<%= image.url %>" alt="image" class="each-post-image">
+        <% }) %>
+    </div>
+
+    <% if(user?._id?.toString() == post?.author?._id?.toString()){ %>
+        <div style="display: flex; column-gap: 20px;">
+            <a href="/posts/<%= post?._id %>/delete" class="post-delete">Delete</a>
+            <a href="/posts/<%= post?._id %>/edit" class="post-edit">Edit</a>
+        </div>
+    <% } %>
+
+    <div style="display: flex; flex-direction: column; border: 1px solid black; padding: 10px; row-gap: 10px;">
+        <% if(post?.comments?.length > 0){ %>
+            <h2 style="text-align: center;">Comments</h2>
+            <% post?.comments?.forEach((comment)=>{ %>
+                <div style="display: flex; justify-content: space-between; align-items: center; border: 1px solid gray; padding: 5px;">
+                    <div style="display: flex; column-gap: 10px; align-items: center;">
+                        <h3><%= comment?.author?.username %> : </h3>
+                        <h4><%= comment?.content %></h4>
+                    </div>
+                    <div style="display: flex; column-gap: 10px;">
+                        <% if(user?._id?.toString() == comment.author._id.toString()){ %>
+                            <a href="/<%= comment._id %>/comment/edit" style="background-color: red; padding: 5px 20px; color: white; text-decoration: none; border-radius: 5px;">Edit</a>
+                            <a href="/<%= comment._id %>/comment/delete" style="background-color: rgb(49, 48, 48); padding: 5px 20px; color: white; text-decoration: none; border-radius: 5px;">Delete</a>
+                        <% } %>
+                    </div>
+                </div>
+            <% }) %>
+        <% } else { %>
+            <p>No comment</p>
+        <% }%>
+    </div>
+
+    <div">
+        <form action="/posts/<%= post?._id %>/comments" method="post" style="display: flex; flex-direction: column; row-gap: 10px;">
+            <textarea type="text" name="content" placeholder="Add Comment" required style="height: 200px; resize: none; padding: 10px; font-size: 20px;"></textarea>
+            <button type="submit" style="background-color: rgb(3, 164, 164); padding: 10px 0; border: none; font-size: 20px; color: white; border-radius: 5px;">Comment</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<% if(user) { %>
+    <div class="home-section">
+        <h1 class="main-heading">Welcome To My Blog</h1>
+        <h2 class="sub-heading">A place to share your thoughts and ideas</h2>
+        <h3 class="sub-sub-heading">Hello , <%= user.username %>! Welcome back!</h3>
+        <button class="profile-button"><i class="fa-solid fa-user" style="margin-right: 10px;"></i>Go to Your Profile</button>
+    </div>
+<% } else { %>
+    <div class="home-section">
+        <h1 class="main-heading">Welcome To My Blog</h1>
+        <h2 class="sub-heading">A place to share your thoughts and ideas</h2>
+        <h3 class="sub-sub-heading">
+            Please 
+            <a href="http://localhost:5000/auth/login" id="login-button">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                Login
+            </a> or 
+            <a href="http://localhost:5000/auth/register" id="register-button">
+                <i class="fa-solid fa-address-card"></i>
+                Register
+            </a>
+                to continue
+        </h3>
+    </div>
+<% }%>

@@ -1,0 +1,30 @@
+<div class="new-post-section">
+    <h1>New Post</h1>
+    <form action="http://localhost:5000/posts/add" method="post" class="new-post-form" enctype="multipart/form-data">
+        <% if(success) { %>
+            <div class="success message"><%= success %></div>
+        <% } else if(error) { %>
+            <div class="error message"><%= error %></div>
+        <% }%>
+        <input type="text" placeholder="Title" name="title" required>
+        <textarea placeholder="Content" name="content" required></textarea>
+        <input multiple type="file" name="images" id="images" onchange="previewImages()" required> <!--multiple is to upload multiple files-->
+        <div id="image-preview"></div>
+        <button type="submit" class="submit-button"><i class="fa-solid fa-circle-plus" style="margin-right: 10px;"></i>Add Post</button>
+    </form>
+</div>
+<script>
+    function previewImages(){
+        const preview = document.getElementById("image-preview");
+        preview.innerHTML = "";
+        const filesList = document.getElementById("images").files;
+        console.log(filesList);
+        for(let i = 0 ; i < filesList.length ; i++){
+            const img = document.createElement("img");
+            img.src = URL.createObjectURL(filesList[i]);
+            img.classList.add("each-image");
+            img.style.maxWidth = "150px";
+            preview.appendChild(img);
+        }
+    }
+</script>
